@@ -37,8 +37,8 @@ public class AccountDBRepository implements AccountRepository {
 
 	@Override
 	@Transactional(REQUIRED)
-	public String createAccount(String accout) {
-		Account anAccount = util.getObjectForJSON(accout, Account.class);
+	public String createAccount(String account) {
+		Account anAccount = util.getObjectForJSON(account, Account.class);
 		manager.persist(anAccount);
 		return "{\"message\": \"account has been sucessfully added\"}";
 	}
@@ -63,6 +63,12 @@ public class AccountDBRepository implements AccountRepository {
 
 	public void setUtil(JSONUtil util) {
 		this.util = util;
+	}
+
+	@Override
+	public Account getAccount(int key) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
